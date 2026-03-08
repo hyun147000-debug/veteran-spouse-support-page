@@ -1,0 +1,4 @@
+notebooklm/
+.claude/
+__pycache__/
+*.pyc

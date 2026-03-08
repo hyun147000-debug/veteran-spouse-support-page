@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>참전유공자 배우자 생계지원금</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* === ZONE 1: HERO === */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+  }
+  .hero > img.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,32,76,0.7) 100%);
+  }
+  .hero-logo {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    width: auto;
+    height: 64px;
+    z-index: 10;
+    object-fit: contain;
+  }
+  .hero-overlay h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .hero-overlay p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: #c8102e;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+
+  /* === ZONE 1: BENEFITS BAR === */
+  .benefits-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #00204c;
+    color: #fff;
+    padding: 0;
+  }
+  .benefit-item {
+    text-align: center;
+    padding: 32px 16px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .benefit-item:last-child { border-right: none; }
+  .benefit-item .num {
+    font-size: 28px;
+    font-weight: 900;
+    color: #f0c040;
+    margin-bottom: 8px;
+  }
+  .benefit-item .label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+
+  /* === TRUST SECTION === */
+  .trust {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+  .trust img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .trust-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, transparent, rgba(0,32,76,0.85));
+    padding: 60px 40px 40px;
+    text-align: center;
+    color: #fff;
+  }
+  .trust-overlay h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .trust-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+  }
+  .trust-stat .val {
+    font-size: 32px;
+    font-weight: 900;
+    color: #f0c040;
+  }
+  .trust-stat .desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 4px;
+  }
+
+  /* === CTA BANNER === */
+  .cta-banner {
+    background: linear-gradient(135deg, #c8102e, #8b0000);
+    color: #fff;
+    text-align: center;
+    padding: 28px 40px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  .cta-banner strong { font-weight: 700; }
+
+  /* === SECTION COMMON === */
+  .section {
+    padding: 72px 48px;
+    background: #fff;
+  }
+  .section.alt {
+    background: #f8f9fb;
+  }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #00204c;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 28px;
+  }
+  .section h2 em {
+    font-style: normal;
+    color: #c8102e;
+  }
+  .section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+  }
+  .section-img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 32px 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  /* === PAIN POINT === */
+  .pain {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+  }
+  .pain img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pain-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.75));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 48px;
+    color: #fff;
+  }
+  .pain-overlay h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+  .pain-overlay p {
+    font-size: 16px;
+    line-height: 2;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* === SOLUTION === */
+  .solution {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+  }
+  .solution img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .solution-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(0,32,76,0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 48px;
+    color: #fff;
+  }
+  .solution-overlay h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .solution-overlay p {
+    font-size: 16px;
+    line-height: 2;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* === BENEFIT TABLE === */
+  .benefit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 28px;
+  }
+  .benefit-table th {
+    background: #00204c;
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+  }
+  .benefit-table td {
+    padding: 16px 20px;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    line-height: 1.6;
+  }
+  .benefit-table tr:nth-child(even) td {
+    background: #f8f9fb;
+  }
+  .benefit-table .highlight {
+    color: #c8102e;
+    font-weight: 700;
+  }
+
+  /* === CHECKLIST === */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin-top: 24px;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+    background: #f8f9fb;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .checklist .icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: #00204c;
+    color: #f0c040;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .check-result {
+    background: #00204c;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 16px;
+  }
+
+  /* === COMPARE TABLE === */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 28px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .compare-table th {
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .compare-table th:first-child { background: #e8e8e8; color: #666; }
+  .compare-table th:nth-child(2) { background: #999; color: #fff; }
+  .compare-table th:nth-child(3) { background: #00204c; color: #f0c040; }
+  .compare-table td {
+    padding: 16px 20px;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .compare-table td:nth-child(2) { color: #999; }
+  .compare-table td:nth-child(3) { color: #00204c; font-weight: 700; }
+
+  /* === STEPS === */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .step {
+    text-align: center;
+    padding: 28px 16px;
+    background: #f8f9fb;
+    border-radius: 16px;
+    position: relative;
+  }
+  .step .step-num {
+    width: 40px;
+    height: 40px;
+    background: #00204c;
+    color: #f0c040;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0 auto 16px;
+  }
+  .step .step-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  .step .step-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* === MEANING === */
+  .meaning-highlight {
+    background: linear-gradient(135deg, #00204c, #003d8f);
+    color: #fff;
+    padding: 48px;
+    border-radius: 16px;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .meaning-highlight h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f0c040;
+    margin-bottom: 16px;
+  }
+  .meaning-highlight p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* === LOCAL BENEFITS === */
+  .local-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .local-table th {
+    background: #00204c;
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-align: left;
+  }
+  .local-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+  }
+  .local-table tr:nth-child(even) td { background: #f8f9fb; }
+
+  /* === CTA FINAL === */
+  .cta-final {
+    background: linear-gradient(180deg, #00204c, #001233);
+    color: #fff;
+    text-align: center;
+    padding: 64px 48px;
+  }
+  .cta-final h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+  .cta-box {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(240,192,64,0.5);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 32px;
+  }
+  .cta-box .amount {
+    font-size: 36px;
+    font-weight: 900;
+    color: #f0c040;
+    margin-bottom: 8px;
+  }
+  .cta-box .sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 24px;
+  }
+  .cta-button {
+    display: inline-block;
+    background: #c8102e;
+    color: #fff;
+    padding: 18px 48px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+  .cta-phone {
+    margin-top: 24px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+  }
+  .cta-phone strong {
+    color: #f0c040;
+    font-size: 22px;
+  }
+
+  /* === FAQ === */
+  .faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 24px 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-size: 16px;
+    font-weight: 700;
+    color: #00204c;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
+  }
+  .faq-a {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    padding-left: 26px;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    background: #1a1a1a;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+</style>
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+
+<!-- ===== ZONE 1: HERO ===== -->
+<div class="hero">
+  <img src="슬라이드_이미지/국가보훈부_로고.png" alt="국가보훈부" class="hero-logo">
+  <img src="슬라이드_이미지/01_히어로배너.png" alt="히어로" class="hero-bg">
+  <div class="hero-overlay">
+    <h1>나라를 지킨 남편 곁을 지킨 당신,<br>이제 대한민국이 당신곁에 함께 하겠습니다.</h1>
+    <p>사망한 참전유공자의 배우자에게<br>매월 15만원 생계지원금을 지급합니다.</p>
+    <span class="hero-badge">2026년 3월 17일 시행</span>
+  </div>
+</div>
+
+<!-- BENEFITS BAR -->
+<div class="benefits-bar">
+  <div class="benefit-item">
+    <div class="num">15만원</div>
+    <div class="label">매월 지급</div>
+  </div>
+  <div class="benefit-item">
+    <div class="num">3.17</div>
+    <div class="label">신청 시작일</div>
+  </div>
+  <div class="benefit-item">
+    <div class="num">80세+</div>
+    <div class="label">지원 대상 연령</div>
+  </div>
+  <div class="benefit-item">
+    <div class="num">1577-0606</div>
+    <div class="label">보훈 상담센터</div>
+  </div>
+</div>
+
+<!-- CTA 1 -->
+<div class="cta-banner">
+  <strong>2026년 3월 17일</strong>부터 신청이 시작됩니다.<br>
+  아래에서 자격 조건과 신청 방법을 확인하세요.
+</div>
+
+<!-- ===== ZONE 2: PAIN POINT ===== -->
+<div class="pain">
+  <img src="슬라이드_이미지/04_페인포인트_공감.png" alt="공감">
+  <div class="pain-overlay">
+    <h2>남편이 떠난 뒤,<br>나라의 지원도 함께 사라졌습니다.</h2>
+    <p>
+      6.25전쟁과 월남전에 참전한 유공자가 세상을 떠나면,<br>
+      매달 받던 참전명예수당과 생계지원금이 즉시 중단됩니다.<br><br>
+      전쟁터에 남편을 보내고 평생 곁에서 뒷바라지해 온 배우자에게<br>
+      남는 것은 '유공자의 아내'라는 명예뿐이었습니다.<br><br>
+      만 80세가 넘은 고령에 주거비, 의료비조차 감당하기 어려운 현실.<br>
+      지금까지 이 사각지대는 방치되어 왔습니다.
+    </p>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<div class="solution">
+  <img src="슬라이드_이미지/05_솔루션선언_희망.png" alt="희망">
+  <div class="solution-overlay">
+    <h2>이제 대한민국이<br>당신의 헌신을 기억합니다.</h2>
+    <p>
+      2026년 3월 17일, 대한민국 보훈 역사상 처음으로<br>
+      <strong>사망한 참전유공자의 배우자</strong>를 위한 생계지원금 제도가 시행됩니다.<br><br>
+      보훈의 범위가 유공자 '개인'에서 <strong>'가족'으로 확장</strong>됩니다.<br>
+      전장을 누빈 유공자의 희생뿐 아니라,<br>
+      그 곁을 지킨 배우자의 인내와 헌신까지 국가가 공식적으로 예우합니다.
+    </p>
+  </div>
+</div>
+
+<!-- ===== ZONE 3: BENEFITS DETAIL ===== -->
+<div class="section">
+  <div class="section-label">지원 내용</div>
+  <h2>매달 <em>15만원</em>, 당신의 생활을 지킵니다.</h2>
+  <img src="슬라이드_이미지/06_혜택시각화.png" alt="혜택" class="section-img">
+  <table class="benefit-table">
+    <thead>
+      <tr><th>정책 내용</th><th>체감 혜택</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>월 15만원 지급</td><td class="highlight">매달 생활비 부담이 15만원 줄어듭니다</td></tr>
+      <tr><td>국가보훈등록증 발급</td><td class="highlight">독립된 보훈 대상자로 국가가 공식 인정합니다</td></tr>
+      <tr><td>유공자 사망 시점 무관</td><td class="highlight">남편분이 언제 돌아가셨든 지금 바로 신청할 수 있습니다</td></tr>
+      <tr><td>대리인 위임 신청 가능</td><td class="highlight">거동이 불편해도 가족이 대신 신청할 수 있습니다</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ELIGIBILITY -->
+<div class="section alt">
+  <div class="section-label">자격 조건</div>
+  <h2>나도 받을 수 있을까? <em>4가지</em>만 확인하세요.</h2>
+  <img src="슬라이드_이미지/07_자격확인_서류.png" alt="자격확인" class="section-img">
+  <ul class="checklist">
+    <li><span class="icon">1</span><div><strong>참전유공자의 배우자</strong>인가요? (6.25전쟁 또는 월남전 참전)</div></li>
+    <li><span class="icon">2</span><div>참전유공자 본인이 <strong>사망</strong>하셨나요?</div></li>
+    <li><span class="icon">3</span><div>배우자 본인이 <strong>만 80세 이상</strong>인가요?</div></li>
+    <li><span class="icon">4</span><div>가구 소득인정액이 <strong>중위소득 50% 이하</strong>인가요? (1인 가구 기준 월 약 128만원)</div></li>
+  </ul>
+  <div class="check-result">4가지 모두 해당되면 &rarr; 신청 가능합니다!</div>
+</div>
+
+<!-- COMPARE -->
+<div class="section">
+  <div class="section-label">비교</div>
+  <h2>달라진 점, <em>한눈에</em> 비교하세요.</h2>
+  <img src="슬라이드_이미지/08_기존vs신규_비교.png" alt="비교" class="section-img">
+  <table class="compare-table">
+    <thead>
+      <tr><th>비교 항목</th><th>기존 제도</th><th>2026 신규 정책</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>지원 대상</td><td>유공자 본인만</td><td>사망한 참전유공자의 배우자까지 확대</td></tr>
+      <tr><td>지원 금액</td><td>월 10만원</td><td>월 15만원 (50% 인상)</td></tr>
+      <tr><td>유공자 사후</td><td>지원 중단</td><td>배우자에게 계속 지급</td></tr>
+      <tr><td>보훈 등록</td><td>본인만</td><td>배우자도 등록증 발급</td></tr>
+      <tr><td>신청 방식</td><td>본인 방문만</td><td>대리인 위임 가능</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- STEPS -->
+<div class="section alt">
+  <div class="section-label">신청 절차</div>
+  <h2>신청, <em>어렵지 않습니다.</em></h2>
+  <img src="슬라이드_이미지/09_신청절차_보훈청.png" alt="보훈청" class="section-img">
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">자격 확인</div>
+      <div class="step-desc">위 체크리스트로<br>대상 여부 확인</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">서류 준비</div>
+      <div class="step-desc">아래 목록 참고</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">접수</div>
+      <div class="step-desc">보훈(지)청 방문<br>또는 우편 접수</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">심사 및 지급</div>
+      <div class="step-desc">자격 심사 후<br>매월 계좌 입금</div>
+    </div>
+  </div>
+
+  <!-- 신청서식 전체 목록 -->
+  <div style="margin-top:40px;">
+    <h3 style="font-size:20px; font-weight:700; color:#00204c; margin-bottom:24px;">작성 서식 (양식)</h3>
+    <table class="benefit-table">
+      <thead><tr><th style="width:40%">서식명</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>등록신청서</td><td>보훈관서 비치</td></tr>
+        <tr><td>생계지원금 지급신청서</td><td>보훈관서 비치</td></tr>
+        <tr><td>소득·재산 신고서</td><td>보훈관서 비치</td></tr>
+        <tr><td>금융정보 등 제공 동의서</td><td>가구원 전원 서명 필요</td></tr>
+        <tr><td>위임장</td><td>대리인 신청 시에만 필요</td></tr>
+        <tr><td>인우보증서</td><td>학도병·비군인 신분 참전 시에만 필요</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:32px;">
+    <h3 style="font-size:20px; font-weight:700; color:#00204c; margin-bottom:24px;">구비 서류 (발급·준비)</h3>
+    <table class="benefit-table">
+      <thead><tr><th style="width:40%">서류명</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>신분증</td><td>주민등록증, 운전면허증 등</td></tr>
+        <tr><td>혼인관계증명서 (상세) 1통</td><td>주민센터 또는 대법원 전자가족관계등록시스템</td></tr>
+        <tr><td>참전유공자의 제적등본 1통</td><td>사망 일자 확인용</td></tr>
+        <tr><td>참전사실 확인 서류 (병적증명서 등)</td><td>유공자가 이미 등록된 경우 생략 가능</td></tr>
+        <tr><td>신청인 사진 1매 (3.5cm x 4.5cm)</td><td>반명함 사이즈</td></tr>
+        <tr><td>수급 희망 계좌 통장 사본</td><td>본인 명의 계좌</td></tr>
+        <tr><td>기타 증빙 자료</td><td>비군인 참전 시: 귀향증, 제대증, 병상일지 등</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== ZONE 4: MEANING ===== -->
+<div class="section">
+  <div class="section-label">정책의 의미</div>
+  <h2>"유공자의 아내"에서<br><em>"국가보훈대상자"</em>로.</h2>
+  <img src="슬라이드_이미지/10_희망과변화_가족.png" alt="희망" class="section-img">
+  <div class="meaning-highlight">
+    <h3>보훈의 패러다임이 바뀝니다</h3>
+    <p>
+      대한민국 보훈 역사상 처음으로<br>
+      참전유공자의 배우자에게 <strong>국가보훈등록증</strong>이 발급됩니다.<br><br>
+      보훈이 유공자 '개인'에서 <strong>'가족'으로 확장</strong>되는<br>
+      역사적인 첫걸음입니다.
+    </p>
+  </div>
+</div>
+
+<!-- CTA 2 -->
+<div class="cta-banner">
+  참전유공자의 배우자이신가요? 주변에 해당되시는 분이 계신가요?<br>
+  <strong>지금 바로 신청 방법을 확인하세요.</strong>
+</div>
+
+
+<!-- ===== ZONE 5: FINAL CTA ===== -->
+<div class="cta-final">
+  <h2>2026년 3월 17일부터<br>신청 가능합니다.</h2>
+  <div class="cta-box">
+    <div class="amount">매월 15만원</div>
+    <div class="sub">생계지원금 + 국가보훈등록증 발급</div>
+    <button class="cta-button">지금 바로 신청하기</button>
+  </div>
+  <div class="cta-phone">
+    거동이 불편하시면 가족이 대리 신청할 수 있습니다<br><br>
+    국가보훈 상담센터 <strong>1577-0606</strong><br>
+    <span style="font-size:13px;">평일 09:00~18:00 | 주소지 관할 보훈(지)청 방문 또는 우편</span>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <div class="section-label">FAQ</div>
+  <h2>자주 묻는 질문</h2>
+  <div class="faq-item">
+    <div class="faq-q"><span>Q.</span> 남편이 오래 전에 돌아가셨는데도 신청 가능한가요?</div>
+    <div class="faq-a">A. 네, 가능합니다. 사망 시점과 관계없이 배우자 본인이 자격 조건(만 80세 이상, 중위소득 50% 이하)을 충족하면 신청할 수 있습니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Q.</span> 참전유공자로 등록되지 않았던 경우에도 되나요?</div>
+    <div class="faq-a">A. 참전사실을 증명할 수 있는 서류(병적증명서 등)를 제출하시면 배우자 등록과 함께 심사가 진행됩니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Q.</span> 거동이 불편해서 보훈청에 직접 갈 수 없습니다.</div>
+    <div class="faq-a">A. 대리인(가족 등)이 위임장을 지참하여 대신 신청할 수 있습니다. 우편 접수도 가능합니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Q.</span> 다른 보훈 수당을 받고 있어도 신청할 수 있나요?</div>
+    <div class="faq-a">A. 전·공상군경 등의 지위로 '생활조정수당'을 이미 받고 계신 경우 중복 지급이 제한됩니다. 관할 보훈(지)청에 문의해 주세요.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Q.</span> 지자체 참전명예수당과 중복으로 받을 수 있나요?</div>
+    <div class="faq-a">A. 지자체마다 조례가 다릅니다. 거주지 행정복지센터에서 중복 수혜 가능 여부를 반드시 확인하세요.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Q.</span> 국가보훈등록증은 어떻게 받나요?</div>
+    <div class="faq-a">A. 배우자 등록 신청이 승인되면 자동 발급됩니다. 별도 신청 없이 등록 절차에 포함됩니다.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  국가보훈부 | 국가보훈 상담센터 1577-0606<br>
+  주소지 관할 보훈(지)청 방문 또는 우편 접수<br><br>
+  본 상세페이지는 정책 안내를 목적으로 제작되었습니다.
+</div>
+
+</body>
+</html>
