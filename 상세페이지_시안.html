@@ -489,6 +489,125 @@
     font-size: 22px;
   }
 
+  /* === EMOTIONAL STORY === */
+  .story-section {
+    background: #faf7f2;
+    padding: 80px 48px;
+  }
+  .story-section .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #00204c;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .story-section h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .story-section h2 em {
+    font-style: normal;
+    color: #c8102e;
+  }
+  .story-intro {
+    font-size: 17px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 48px;
+    max-width: 640px;
+  }
+  .story-hero-img {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 48px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .story-narrative {
+    background: #fff;
+    border-radius: 16px;
+    padding: 48px;
+    margin-bottom: 40px;
+    border-left: 4px solid #c8102e;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  }
+  .story-narrative p {
+    font-size: 17px;
+    line-height: 2.2;
+    color: #333;
+    word-break: keep-all;
+  }
+  .story-narrative p strong {
+    color: #c8102e;
+    font-weight: 700;
+  }
+  .story-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .story-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+  .story-card:hover {
+    transform: translateY(-4px);
+  }
+  .story-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .story-card-body {
+    padding: 28px 24px;
+  }
+  .story-card-body h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00204c;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .story-card-body p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+  }
+  .story-closing {
+    margin-top: 48px;
+    background: linear-gradient(135deg, #00204c, #003d8f);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    color: #fff;
+  }
+  .story-closing .quote-mark {
+    font-size: 48px;
+    color: #f0c040;
+    line-height: 1;
+    margin-bottom: 16px;
+    font-family: Georgia, serif;
+  }
+  .story-closing p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.95);
+  }
+  .story-closing .quote-author {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
+  }
+
   /* === FAQ === */
   .faq-item {
     border-bottom: 1px solid #eee;
@@ -529,7 +648,7 @@
   <img src="슬라이드_이미지/국가보훈부_로고.png" alt="국가보훈부" class="hero-logo">
   <img src="슬라이드_이미지/01_히어로배너.png" alt="히어로" class="hero-bg">
   <div class="hero-overlay">
-    <h1>나라를 지킨 남편 곁을 지킨 당신,<br>이제 대한민국이 당신곁에 함께 하겠습니다.</h1>
+    <h1>나라를 지킨 남편 곁을 지킨 당신,<br>이제 대한민국이 당신 곁에 함께 하겠습니다.</h1>
     <p>사망한 참전유공자의 배우자에게<br>매월 15만원 생계지원금을 지급합니다.</p>
     <span class="hero-badge">2026년 3월 17일 시행</span>
   </div>
@@ -717,6 +836,95 @@
       보훈이 유공자 '개인'에서 <strong>'가족'으로 확장</strong>되는<br>
       역사적인 첫걸음입니다.
     </p>
+  </div>
+</div>
+
+<!-- ===== EMOTIONAL STORY: 15만원의 의미 ===== -->
+<div class="story-section">
+  <div class="section-label">15만원의 의미</div>
+  <h2>80세 어머니에게,<br><em>15만원</em>은 단순한 금액이 아닙니다.</h2>
+  <p class="story-intro">
+    비록 적은 금액이라 느껴질 수 있습니다.<br>
+    하지만 평생을 홀로 버텨온 80세 노모에게<br>
+    이 15만원에는 돈으로 환산할 수 없는 가치가 담겨 있습니다.
+  </p>
+
+  <img src="슬라이드_이미지/story_main.png" alt="할머니의 일상" class="story-hero-img">
+
+  <!-- 서사적 스토리 -->
+  <div class="story-narrative">
+    <p>
+      남편이 떠난 뒤, 수십 년을 홀로 견뎌온 시간.<br>
+      아침마다 텅 빈 밥상 앞에서 혼자 숟가락을 들던 날들.<br>
+      병원에 가고 싶어도 택시비가 아까워 참았던 날들.<br><br>
+      그런 어머니에게 매달 통장에 찍히는 <strong>'국가보훈부'</strong> 네 글자는<br>
+      15만원이라는 숫자보다 훨씬 더 큰 의미입니다.<br><br>
+      <strong>"나라가 나를 잊지 않았구나."</strong><br>
+      <strong>"남편의 희생이 헛되지 않았구나."</strong><br><br>
+      그 따뜻한 확인이, 오늘 하루를 살아갈 힘이 됩니다.
+    </p>
+  </div>
+
+  <!-- 감성 카드 4장 -->
+  <div class="story-cards">
+    <div class="story-card">
+      <img src="슬라이드_이미지/story_pride.png" alt="국가보훈등록증을 받은 할머니">
+      <div class="story-card-body">
+        <h4>국가가 인정한 나의 이름</h4>
+        <p>
+          더 이상 '유공자의 아내'가 아닙니다.<br>
+          국가보훈등록증에 새겨진 자신의 이름을 보며<br>
+          "나도 보훈대상자"라는 자부심을 느낍니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <img src="슬라이드_이미지/story_grandchild.png" alt="손주에게 용돈을 주는 할머니">
+      <div class="story-card-body">
+        <h4>손주에게 건네는 작은 행복</h4>
+        <p>
+          명절에 찾아온 손주 손에 만원짜리 한 장을 쥐어줄 때,<br>
+          그 안에 담긴 건 돈이 아니라<br>
+          할머니의 사랑, 그리고 존재의 기쁨입니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <img src="슬라이드_이미지/story_relief.png" alt="약국에서 약을 받는 할머니">
+      <div class="story-card-body">
+        <h4>망설이지 않는 병원 한 번</h4>
+        <p>
+          아파도 참고, 아파도 참던 날들.<br>
+          이제 약값 걱정 없이 병원에 갈 수 있다는<br>
+          그 안도감이 삶의 질을 바꿉니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <img src="슬라이드_이미지/story_comfort.png" alt="창가에 앉아 미소짓는 할머니">
+      <div class="story-card-body">
+        <h4>잊히지 않았다는 위안</h4>
+        <p>
+          전쟁터에 남편을 보내고 평생을 견뎌온 세월.<br>
+          국가가 그 헌신을 기억하고 있다는 사실 하나가<br>
+          남은 인생에 따뜻한 위로가 됩니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 클로징 인용 -->
+  <div class="story-closing">
+    <div class="quote-mark">"</div>
+    <p>
+      15만원은 숫자가 아닙니다.<br>
+      국가가 보내는 감사의 마음이고,<br>
+      80세 어머니가 내일도 살아갈 이유입니다.
+    </p>
+    <div class="quote-author">- 대한민국이 기억하는 당신의 헌신</div>
   </div>
 </div>
 
