@@ -653,14 +653,24 @@
 
     /* HERO */
     .hero { height: auto; min-height: 480px; }
+    .hero > img.hero-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
     .hero-logo { height: 44px; top: 16px; right: 16px; }
-    .hero-overlay { padding: 32px 24px; }
+    .hero-overlay {
+      position: relative;
+      padding: 60px 24px 40px;
+      min-height: 480px;
+    }
     .hero-overlay h1 {
       font-size: 22px;
       line-height: 1.6;
       margin-bottom: 16px;
     }
-    .hero-overlay p { font-size: 15px; }
+    .hero-overlay p { font-size: 14px; }
     .hero-badge {
       font-size: 13px;
       padding: 6px 18px;
@@ -702,8 +712,9 @@
       margin-bottom: 16px;
     }
     .pain-overlay p {
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.9;
+      letter-spacing: -0.2px;
     }
 
     /* SOLUTION */
@@ -718,12 +729,17 @@
       font-size: 22px;
     }
     .solution-overlay p {
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.9;
+      letter-spacing: -0.2px;
     }
 
     /* SECTION COMMON */
     .section { padding: 40px 20px; }
+    .section-label {
+      letter-spacing: 1.5px;
+      font-size: 11px;
+    }
     .section h2 {
       font-size: 20px;
       line-height: 1.5;
@@ -807,13 +823,17 @@
       margin-top: 24px;
     }
     .meaning-highlight h3 { font-size: 18px; }
-    .meaning-highlight p { font-size: 14px; }
+    .meaning-highlight p { font-size: 13.5px; letter-spacing: -0.2px; }
 
     /* STORY */
     .story-section { padding: 40px 20px; }
+    .story-section .section-label {
+      letter-spacing: 1.5px;
+      font-size: 11px;
+    }
     .story-section h2 { font-size: 20px; }
     .story-intro {
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.8;
       margin-bottom: 28px;
       max-width: 100%;
@@ -828,8 +848,9 @@
       margin-bottom: 28px;
     }
     .story-narrative p {
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 2;
+      letter-spacing: -0.2px;
     }
     .story-cards {
       grid-template-columns: 1fr;
@@ -845,8 +866,9 @@
       margin-bottom: 8px;
     }
     .story-card-body p {
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.7;
+      letter-spacing: -0.2px;
     }
     .story-closing {
       padding: 28px 20px;
@@ -915,7 +937,7 @@
   <img src="슬라이드_이미지/국가보훈부_로고.png" alt="국가보훈부" class="hero-logo">
   <img src="슬라이드_이미지/01_히어로배너.png" alt="히어로" class="hero-bg">
   <div class="hero-overlay">
-    <h1>나라를 지킨 남편<br class="br-mo"> 곁을 지킨 당신,<br>이제 대한민국이<br class="br-mo"> 당신 곁에 함께 하겠습니다.</h1>
+    <h1>나라를 지킨 남편<br>곁을 지킨 당신,<br>이제 대한민국이<br>당신 곁에 함께 하겠습니다.</h1>
     <p>사망한 참전유공자의 배우자에게<br>매월 15만원 생계지원금을 지급합니다.</p>
     <span class="hero-badge">2026년 3월 17일 시행</span>
   </div>
@@ -943,22 +965,22 @@
 
 <!-- CTA 1 -->
 <div class="cta-banner">
-  <strong>2026년 3월 17일</strong>부터<br class="br-mo"> 신청이 시작됩니다.<br>
-  아래에서 자격 조건과<br class="br-mo"> 신청 방법을 확인하세요.
+  <strong>2026년 3월 17일</strong>부터 신청이 시작됩니다.<br>
+  아래에서 자격 조건과 신청 방법을 확인하세요.
 </div>
 
 <!-- ===== ZONE 2: PAIN POINT ===== -->
 <div class="pain">
   <img src="슬라이드_이미지/04_페인포인트_공감.png" alt="공감">
   <div class="pain-overlay">
-    <h2>남편이 떠난 뒤,<br>나라의 지원도<br class="br-mo"> 함께 사라졌습니다.</h2>
+    <h2>남편이 떠난 뒤,<br>나라의 지원도<br>함께 사라졌습니다.</h2>
     <p>
-      6.25전쟁과 월남전에 참전한 유공자가 세상을 떠나면,<br class="br-pc">
+      6.25전쟁과 월남전에 참전한 유공자가<br class="br-mo"> 세상을 떠나면,<br class="br-pc">
       매달 받던 참전명예수당과<br class="br-mo"> 생계지원금이 즉시 중단됩니다.<br><br>
-      전쟁터에 남편을 보내고 평생 곁에서<br class="br-mo"> 뒷바라지해 온 배우자에게<br class="br-pc">
+      전쟁터에 남편을 보내고<br class="br-mo"> 평생 곁에서 뒷바라지해 온 배우자에게<br class="br-pc">
       남는 것은 '유공자의 아내'라는<br class="br-mo"> 명예뿐이었습니다.<br><br>
       만 80세가 넘은 고령에<br class="br-mo"> 주거비, 의료비조차 감당하기 어려운 현실.<br class="br-pc">
-      지금까지 이 사각지대는<br class="br-mo"> 방치되어 왔습니다.
+      지금까지 이 사각지대는 방치되어 왔습니다.
     </p>
   </div>
 </div>
@@ -969,7 +991,7 @@
   <div class="solution-overlay">
     <h2>이제 대한민국이<br>당신의 헌신을 기억합니다.</h2>
     <p>
-      2026년 3월 17일, 대한민국 보훈 역사상 처음으로<br class="br-pc">
+      2026년 3월 17일,<br class="br-mo"> 대한민국 보훈 역사상 처음으로<br class="br-pc">
       <strong>사망한 참전유공자의 배우자</strong>를 위한<br class="br-mo"> 생계지원금 제도가 시행됩니다.<br><br>
       보훈의 범위가 유공자 '개인'에서<br class="br-mo"> <strong>'가족'으로 확장</strong>됩니다.<br class="br-pc">
       전장을 누빈 유공자의 희생뿐 아니라,<br class="br-pc">
@@ -1099,7 +1121,8 @@
     <h3>보훈의 패러다임이 바뀝니다</h3>
     <p>
       대한민국 보훈 역사상 처음으로<br class="br-pc">
-      참전유공자의 배우자에게<br class="br-mo"> <strong>국가보훈등록증</strong>이 발급됩니다.<br><br>
+      참전유공자의 배우자에게<br>
+      <strong>국가보훈등록증</strong>이 발급됩니다.<br><br>
       보훈이 유공자 '개인'에서<br class="br-mo"> <strong>'가족'으로 확장</strong>되는<br class="br-pc">
       역사적인 첫걸음입니다.
     </p>
@@ -1112,8 +1135,8 @@
   <h2>80세 어머니에게,<br><em>15만원</em>은<br class="br-mo"> 단순한 금액이 아닙니다.</h2>
   <p class="story-intro">
     비록 적은 금액이라 느껴질 수 있습니다.<br class="br-pc">
-    하지만 평생을 홀로 버텨온<br class="br-mo"> 80세 노모에게<br class="br-pc">
-    이 15만원에는 돈으로 환산할 수 없는<br class="br-mo"> 가치가 담겨 있습니다.
+    하지만 평생을 홀로 버텨온<br class="br-mo"> 80세 노모에게 이 15만원에는<br class="br-pc">
+    돈으로 환산할 수 없는 가치가 담겨 있습니다.
   </p>
 
   <img src="슬라이드_이미지/story_main.png" alt="할머니의 일상" class="story-hero-img">
@@ -1125,7 +1148,7 @@
       아침마다 텅 빈 밥상 앞에서<br class="br-mo"> 혼자 숟가락을 들던 날들.<br class="br-pc">
       병원에 가고 싶어도<br class="br-mo"> 택시비가 아까워 참았던 날들.<br><br>
       그런 어머니에게 매달 통장에 찍히는<br class="br-mo"> <strong>'국가보훈부'</strong> 네 글자는<br class="br-pc">
-      15만원이라는 숫자보다<br class="br-mo"> 훨씬 더 큰 의미입니다.<br><br>
+      15만원이라는 숫자보다 훨씬 더 큰 의미입니다.<br><br>
       <strong>"나라가 나를 잊지 않았구나."</strong><br>
       <strong>"남편의 희생이 헛되지 않았구나."</strong><br><br>
       그 따뜻한 확인이,<br class="br-mo"> 오늘 하루를 살아갈 힘이 됩니다.
@@ -1140,8 +1163,8 @@
         <h4>국가가 인정한 나의 이름</h4>
         <p>
           더 이상 '유공자의 아내'가 아닙니다.<br class="br-pc">
-          국가보훈등록증에 새겨진<br class="br-mo"> 자신의 이름을 보며<br class="br-pc">
-          "나도 보훈대상자"라는<br class="br-mo"> 자부심을 느낍니다.
+          국가보훈등록증에 새겨진 자신의 이름을 보며<br class="br-pc">
+          "나도 보훈대상자"라는 자부심을 느낍니다.
         </p>
       </div>
     </div>
@@ -1151,9 +1174,8 @@
       <div class="story-card-body">
         <h4>손주에게 건네는 작은 행복</h4>
         <p>
-          명절에 찾아온 손주 손에 만원짜리<br class="br-pc">
-          한 장을 쥐어줄 때,<br class="br-mo"> 그 안에 담긴 건 돈이 아니라<br class="br-pc">
-          할머니의 사랑,<br class="br-mo"> 그리고 존재의 기쁨입니다.
+          명절에 찾아온 손주 손에<br class="br-mo"> 만원짜리 한 장을 쥐어줄 때,<br class="br-pc">
+          그 안에 담긴 건 돈이 아니라<br class="br-mo"> 할머니의 사랑, 그리고 존재의 기쁨입니다.
         </p>
       </div>
     </div>
@@ -1164,7 +1186,7 @@
         <h4>망설이지 않는 병원 한 번</h4>
         <p>
           아파도 참고, 아파도 참던 날들.<br class="br-pc">
-          이제 약값 걱정 없이<br class="br-mo"> 병원에 갈 수 있다는<br class="br-pc">
+          이제 약값 걱정 없이 병원에 갈 수 있다는<br class="br-pc">
           그 안도감이 삶의 질을 바꿉니다.
         </p>
       </div>
@@ -1175,9 +1197,9 @@
       <div class="story-card-body">
         <h4>잊히지 않았다는 위안</h4>
         <p>
-          전쟁터에 남편을 보내고 평생을 견뎌온 세월.<br class="br-pc">
-          국가가 그 헌신을 기억하고 있다는<br class="br-mo"> 사실 하나가<br class="br-pc">
-          남은 인생에 따뜻한 위로가 됩니다.
+          전쟁터에 남편을 보내고<br class="br-mo"> 평생을 견뎌온 세월.<br class="br-pc">
+          국가가 그 헌신을 기억하고 있다는<br class="br-mo"> 사실 하나가 남은 인생에<br class="br-pc">
+          따뜻한 위로가 됩니다.
         </p>
       </div>
     </div>
@@ -1189,7 +1211,7 @@
     <p>
       15만원은 숫자가 아닙니다.<br>
       국가가 보내는 감사의 마음이고,<br>
-      80세 어머니가<br class="br-mo"> 내일도 살아갈 이유입니다.
+      80세 어머니가 내일도 살아갈 이유입니다.
     </p>
     <div class="quote-author">- 대한민국이 기억하는 당신의 헌신</div>
   </div>
@@ -1199,6 +1221,7 @@
 <div class="cta-banner">
   참전유공자의 배우자이신가요?<br class="br-mo"> 주변에 해당되시는 분이 계신가요?<br>
   <strong>지금 바로 신청 방법을 확인하세요.</strong>
+
 </div>
 
 
@@ -1211,9 +1234,9 @@
     <button class="cta-button">지금 바로 방문(우편) 신청하세요.</button>
   </div>
   <div class="cta-phone">
-    거동이 불편하시면<br class="br-mo"> 가족이 대리 신청할 수 있습니다<br><br>
+    거동이 불편하시면 가족이 대리 신청할 수 있습니다<br><br>
     국가보훈 상담센터 <strong>1577-0606</strong><br>
-    <span style="font-size:13px;">평일 09:00~18:00<br class="br-mo"> | 주소지 관할 보훈(지)청 방문 또는 우편</span>
+    <span style="font-size:13px;">평일 09:00~18:00 |<br class="br-mo"> 주소지 관할 보훈(지)청 방문 또는 우편</span>
   </div>
 </div>
 
