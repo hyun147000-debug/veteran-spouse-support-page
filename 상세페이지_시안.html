@@ -14,7 +14,12 @@
     color: #1a1a1a;
     max-width: 860px;
     margin: 0 auto;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
+
+  /* === RESPONSIVE BR === */
+  .br-mo { display: none; }
 
   /* === ZONE 1: HERO === */
   .hero {
@@ -638,6 +643,268 @@
     font-size: 13px;
     line-height: 1.8;
   }
+
+  /* ============================================
+     MOBILE RESPONSIVE (max-width: 640px)
+     ============================================ */
+  @media (max-width: 640px) {
+    .br-pc { display: none; }
+    .br-mo { display: inline; }
+
+    /* HERO */
+    .hero { height: auto; min-height: 480px; }
+    .hero-logo { height: 44px; top: 16px; right: 16px; }
+    .hero-overlay { padding: 32px 24px; }
+    .hero-overlay h1 {
+      font-size: 22px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .hero-overlay p { font-size: 15px; }
+    .hero-badge {
+      font-size: 13px;
+      padding: 6px 18px;
+      margin-top: 14px;
+    }
+
+    /* BENEFITS BAR */
+    .benefits-bar { grid-template-columns: repeat(2, 1fr); }
+    .benefit-item { padding: 20px 12px; }
+    .benefit-item:nth-child(2) { border-right: none; }
+    .benefit-item .num { font-size: 22px; }
+    .benefit-item .label { font-size: 12px; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      padding: 20px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* TRUST */
+    .trust { height: 300px; }
+    .trust-overlay { padding: 32px 20px 24px; }
+    .trust-overlay h3 { font-size: 11px; letter-spacing: 2px; }
+    .trust-stats { gap: 28px; }
+    .trust-stat .val { font-size: 24px; }
+    .trust-stat .desc { font-size: 11px; }
+
+    /* PAIN */
+    .pain { height: auto; }
+    .pain img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 100%; }
+    .pain-overlay {
+      position: relative;
+      min-height: 420px;
+      padding: 32px 20px;
+    }
+    .pain-overlay h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .pain-overlay p {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* SOLUTION */
+    .solution { height: auto; }
+    .solution img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 100%; }
+    .solution-overlay {
+      position: relative;
+      min-height: 380px;
+      padding: 32px 20px;
+    }
+    .solution-overlay h2 {
+      font-size: 22px;
+    }
+    .solution-overlay p {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* SECTION COMMON */
+    .section { padding: 40px 20px; }
+    .section h2 {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .section p { font-size: 14px; }
+    .section-img {
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    /* BENEFIT TABLE */
+    .benefit-table { margin-top: 20px; }
+    .benefit-table th {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    .benefit-table td {
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    /* CHECKLIST */
+    .checklist li {
+      padding: 14px 16px;
+      font-size: 14px;
+      gap: 12px;
+      border-radius: 10px;
+    }
+    .checklist .icon {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+    .check-result {
+      font-size: 14px;
+      padding: 16px;
+      border-radius: 10px;
+    }
+
+    /* COMPARE TABLE */
+    .compare-table { margin-top: 20px; }
+    .compare-table th {
+      padding: 10px 6px;
+      font-size: 12px;
+    }
+    .compare-table td {
+      padding: 10px 6px;
+      font-size: 12px;
+    }
+
+    /* STEPS */
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .step {
+      padding: 20px 12px;
+      border-radius: 12px;
+    }
+    .step .step-num {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .step .step-title { font-size: 14px; }
+    .step .step-desc { font-size: 12px; }
+
+    /* FORMS/DOCUMENTS TABLE HEADINGS */
+    .section h3 {
+      font-size: 17px !important;
+      margin-bottom: 16px !important;
+    }
+
+    /* MEANING */
+    .meaning-highlight {
+      padding: 28px 20px;
+      border-radius: 12px;
+      margin-top: 24px;
+    }
+    .meaning-highlight h3 { font-size: 18px; }
+    .meaning-highlight p { font-size: 14px; }
+
+    /* STORY */
+    .story-section { padding: 40px 20px; }
+    .story-section h2 { font-size: 20px; }
+    .story-intro {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 100%;
+    }
+    .story-hero-img {
+      border-radius: 12px;
+      margin-bottom: 28px;
+    }
+    .story-narrative {
+      padding: 24px 18px;
+      border-radius: 12px;
+      margin-bottom: 28px;
+    }
+    .story-narrative p {
+      font-size: 14px;
+      line-height: 2;
+    }
+    .story-cards {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .story-card img { height: 180px; }
+    .story-card-body {
+      padding: 20px 16px;
+    }
+    .story-card-body h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .story-card-body p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .story-closing {
+      padding: 28px 20px;
+      border-radius: 12px;
+      margin-top: 32px;
+    }
+    .story-closing .quote-mark {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .story-closing p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .story-closing .quote-author { font-size: 12px; }
+
+    /* LOCAL TABLE */
+    .local-table th { padding: 10px 12px; font-size: 12px; }
+    .local-table td { padding: 10px 12px; font-size: 12px; }
+
+    /* CTA FINAL */
+    .cta-final { padding: 40px 20px; }
+    .cta-final h2 {
+      font-size: 20px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .cta-box {
+      padding: 24px 16px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+    .cta-box .amount { font-size: 28px; }
+    .cta-box .sub { font-size: 13px; margin-bottom: 20px; }
+    .cta-button {
+      padding: 16px 24px;
+      font-size: 16px;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .cta-phone { font-size: 13px; margin-top: 20px; }
+    .cta-phone strong { font-size: 18px; }
+
+    /* FAQ */
+    .faq-item { padding: 18px 0; }
+    .faq-q { font-size: 14px; gap: 6px; }
+    .faq-a {
+      font-size: 13px;
+      padding-left: 20px;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 28px 20px;
+      font-size: 11px;
+    }
+  }
 </style>
 <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </head>
@@ -648,7 +915,7 @@
   <img src="슬라이드_이미지/국가보훈부_로고.png" alt="국가보훈부" class="hero-logo">
   <img src="슬라이드_이미지/01_히어로배너.png" alt="히어로" class="hero-bg">
   <div class="hero-overlay">
-    <h1>나라를 지킨 남편 곁을 지킨 당신,<br>이제 대한민국이 당신 곁에 함께 하겠습니다.</h1>
+    <h1>나라를 지킨 남편<br class="br-mo"> 곁을 지킨 당신,<br>이제 대한민국이<br class="br-mo"> 당신 곁에 함께 하겠습니다.</h1>
     <p>사망한 참전유공자의 배우자에게<br>매월 15만원 생계지원금을 지급합니다.</p>
     <span class="hero-badge">2026년 3월 17일 시행</span>
   </div>
@@ -676,22 +943,22 @@
 
 <!-- CTA 1 -->
 <div class="cta-banner">
-  <strong>2026년 3월 17일</strong>부터 신청이 시작됩니다.<br>
-  아래에서 자격 조건과 신청 방법을 확인하세요.
+  <strong>2026년 3월 17일</strong>부터<br class="br-mo"> 신청이 시작됩니다.<br>
+  아래에서 자격 조건과<br class="br-mo"> 신청 방법을 확인하세요.
 </div>
 
 <!-- ===== ZONE 2: PAIN POINT ===== -->
 <div class="pain">
   <img src="슬라이드_이미지/04_페인포인트_공감.png" alt="공감">
   <div class="pain-overlay">
-    <h2>남편이 떠난 뒤,<br>나라의 지원도 함께 사라졌습니다.</h2>
+    <h2>남편이 떠난 뒤,<br>나라의 지원도<br class="br-mo"> 함께 사라졌습니다.</h2>
     <p>
-      6.25전쟁과 월남전에 참전한 유공자가 세상을 떠나면,<br>
-      매달 받던 참전명예수당과 생계지원금이 즉시 중단됩니다.<br><br>
-      전쟁터에 남편을 보내고 평생 곁에서 뒷바라지해 온 배우자에게<br>
-      남는 것은 '유공자의 아내'라는 명예뿐이었습니다.<br><br>
-      만 80세가 넘은 고령에 주거비, 의료비조차 감당하기 어려운 현실.<br>
-      지금까지 이 사각지대는 방치되어 왔습니다.
+      6.25전쟁과 월남전에 참전한 유공자가 세상을 떠나면,<br class="br-pc">
+      매달 받던 참전명예수당과<br class="br-mo"> 생계지원금이 즉시 중단됩니다.<br><br>
+      전쟁터에 남편을 보내고 평생 곁에서<br class="br-mo"> 뒷바라지해 온 배우자에게<br class="br-pc">
+      남는 것은 '유공자의 아내'라는<br class="br-mo"> 명예뿐이었습니다.<br><br>
+      만 80세가 넘은 고령에<br class="br-mo"> 주거비, 의료비조차 감당하기 어려운 현실.<br class="br-pc">
+      지금까지 이 사각지대는<br class="br-mo"> 방치되어 왔습니다.
     </p>
   </div>
 </div>
@@ -702,11 +969,11 @@
   <div class="solution-overlay">
     <h2>이제 대한민국이<br>당신의 헌신을 기억합니다.</h2>
     <p>
-      2026년 3월 17일, 대한민국 보훈 역사상 처음으로<br>
-      <strong>사망한 참전유공자의 배우자</strong>를 위한 생계지원금 제도가 시행됩니다.<br><br>
-      보훈의 범위가 유공자 '개인'에서 <strong>'가족'으로 확장</strong>됩니다.<br>
-      전장을 누빈 유공자의 희생뿐 아니라,<br>
-      그 곁을 지킨 배우자의 인내와 헌신까지 국가가 공식적으로 예우합니다.
+      2026년 3월 17일, 대한민국 보훈 역사상 처음으로<br class="br-pc">
+      <strong>사망한 참전유공자의 배우자</strong>를 위한<br class="br-mo"> 생계지원금 제도가 시행됩니다.<br><br>
+      보훈의 범위가 유공자 '개인'에서<br class="br-mo"> <strong>'가족'으로 확장</strong>됩니다.<br class="br-pc">
+      전장을 누빈 유공자의 희생뿐 아니라,<br class="br-pc">
+      그 곁을 지킨 배우자의 인내와 헌신까지<br class="br-mo"> 국가가 공식적으로 예우합니다.
     </p>
   </div>
 </div>
@@ -714,7 +981,7 @@
 <!-- ===== ZONE 3: BENEFITS DETAIL ===== -->
 <div class="section">
   <div class="section-label">지원 내용</div>
-  <h2>매달 <em>15만원</em>, 당신의 생활을 지킵니다.</h2>
+  <h2>매달 <em>15만원</em>,<br class="br-mo"> 당신의 생활을 지킵니다.</h2>
   <img src="슬라이드_이미지/06_혜택시각화.png" alt="혜택" class="section-img">
   <table class="benefit-table">
     <thead>
@@ -732,13 +999,13 @@
 <!-- ELIGIBILITY -->
 <div class="section alt">
   <div class="section-label">자격 조건</div>
-  <h2>나도 받을 수 있을까? <em>4가지</em>만 확인하세요.</h2>
+  <h2>나도 받을 수 있을까?<br class="br-mo"> <em>4가지</em>만 확인하세요.</h2>
   <img src="슬라이드_이미지/07_자격확인_서류.png" alt="자격확인" class="section-img">
   <ul class="checklist">
-    <li><span class="icon">1</span><div><strong>참전유공자의 배우자</strong>인가요? (6.25전쟁 또는 월남전 참전)</div></li>
+    <li><span class="icon">1</span><div><strong>참전유공자의 배우자</strong>인가요?<br class="br-mo"> (6.25전쟁 또는 월남전 참전)</div></li>
     <li><span class="icon">2</span><div>참전유공자 본인이 <strong>사망</strong>하셨나요?</div></li>
-    <li><span class="icon">3</span><div>배우자 본인이 <strong>만 80세 이상</strong>인가요?</div></li>
-    <li><span class="icon">4</span><div>가구 소득인정액이 <strong>중위소득 50% 이하</strong>인가요? (1인 가구 기준 월 약 128만원)</div></li>
+    <li><span class="icon">3</span><div>배우자 본인이<br class="br-mo"> <strong>만 80세 이상</strong>인가요?</div></li>
+    <li><span class="icon">4</span><div>가구 소득인정액이<br class="br-mo"> <strong>중위소득 50% 이하</strong>인가요?<br class="br-mo"> (1인 가구 기준 월 약 128만원)</div></li>
   </ul>
   <div class="check-result">4가지 모두 해당되면 &rarr; 신청 가능합니다!</div>
 </div>
@@ -831,9 +1098,9 @@
   <div class="meaning-highlight">
     <h3>보훈의 패러다임이 바뀝니다</h3>
     <p>
-      대한민국 보훈 역사상 처음으로<br>
-      참전유공자의 배우자에게 <strong>국가보훈등록증</strong>이 발급됩니다.<br><br>
-      보훈이 유공자 '개인'에서 <strong>'가족'으로 확장</strong>되는<br>
+      대한민국 보훈 역사상 처음으로<br class="br-pc">
+      참전유공자의 배우자에게<br class="br-mo"> <strong>국가보훈등록증</strong>이 발급됩니다.<br><br>
+      보훈이 유공자 '개인'에서<br class="br-mo"> <strong>'가족'으로 확장</strong>되는<br class="br-pc">
       역사적인 첫걸음입니다.
     </p>
   </div>
@@ -842,11 +1109,11 @@
 <!-- ===== EMOTIONAL STORY: 15만원의 의미 ===== -->
 <div class="story-section">
   <div class="section-label">15만원의 의미</div>
-  <h2>80세 어머니에게,<br><em>15만원</em>은 단순한 금액이 아닙니다.</h2>
+  <h2>80세 어머니에게,<br><em>15만원</em>은<br class="br-mo"> 단순한 금액이 아닙니다.</h2>
   <p class="story-intro">
-    비록 적은 금액이라 느껴질 수 있습니다.<br>
-    하지만 평생을 홀로 버텨온 80세 노모에게<br>
-    이 15만원에는 돈으로 환산할 수 없는 가치가 담겨 있습니다.
+    비록 적은 금액이라 느껴질 수 있습니다.<br class="br-pc">
+    하지만 평생을 홀로 버텨온<br class="br-mo"> 80세 노모에게<br class="br-pc">
+    이 15만원에는 돈으로 환산할 수 없는<br class="br-mo"> 가치가 담겨 있습니다.
   </p>
 
   <img src="슬라이드_이미지/story_main.png" alt="할머니의 일상" class="story-hero-img">
@@ -854,14 +1121,14 @@
   <!-- 서사적 스토리 -->
   <div class="story-narrative">
     <p>
-      남편이 떠난 뒤, 수십 년을 홀로 견뎌온 시간.<br>
-      아침마다 텅 빈 밥상 앞에서 혼자 숟가락을 들던 날들.<br>
-      병원에 가고 싶어도 택시비가 아까워 참았던 날들.<br><br>
-      그런 어머니에게 매달 통장에 찍히는 <strong>'국가보훈부'</strong> 네 글자는<br>
-      15만원이라는 숫자보다 훨씬 더 큰 의미입니다.<br><br>
+      남편이 떠난 뒤, 수십 년을 홀로 견뎌온 시간.<br class="br-pc">
+      아침마다 텅 빈 밥상 앞에서<br class="br-mo"> 혼자 숟가락을 들던 날들.<br class="br-pc">
+      병원에 가고 싶어도<br class="br-mo"> 택시비가 아까워 참았던 날들.<br><br>
+      그런 어머니에게 매달 통장에 찍히는<br class="br-mo"> <strong>'국가보훈부'</strong> 네 글자는<br class="br-pc">
+      15만원이라는 숫자보다<br class="br-mo"> 훨씬 더 큰 의미입니다.<br><br>
       <strong>"나라가 나를 잊지 않았구나."</strong><br>
       <strong>"남편의 희생이 헛되지 않았구나."</strong><br><br>
-      그 따뜻한 확인이, 오늘 하루를 살아갈 힘이 됩니다.
+      그 따뜻한 확인이,<br class="br-mo"> 오늘 하루를 살아갈 힘이 됩니다.
     </p>
   </div>
 
@@ -872,9 +1139,9 @@
       <div class="story-card-body">
         <h4>국가가 인정한 나의 이름</h4>
         <p>
-          더 이상 '유공자의 아내'가 아닙니다.<br>
-          국가보훈등록증에 새겨진 자신의 이름을 보며<br>
-          "나도 보훈대상자"라는 자부심을 느낍니다.
+          더 이상 '유공자의 아내'가 아닙니다.<br class="br-pc">
+          국가보훈등록증에 새겨진<br class="br-mo"> 자신의 이름을 보며<br class="br-pc">
+          "나도 보훈대상자"라는<br class="br-mo"> 자부심을 느낍니다.
         </p>
       </div>
     </div>
@@ -884,9 +1151,9 @@
       <div class="story-card-body">
         <h4>손주에게 건네는 작은 행복</h4>
         <p>
-          명절에 찾아온 손주 손에 만원짜리<br>
-          한 장을 쥐어줄 때, 그 안에 담긴 건 돈이 아니라<br>
-          할머니의 사랑, 그리고 존재의 기쁨입니다.
+          명절에 찾아온 손주 손에 만원짜리<br class="br-pc">
+          한 장을 쥐어줄 때,<br class="br-mo"> 그 안에 담긴 건 돈이 아니라<br class="br-pc">
+          할머니의 사랑,<br class="br-mo"> 그리고 존재의 기쁨입니다.
         </p>
       </div>
     </div>
@@ -896,8 +1163,8 @@
       <div class="story-card-body">
         <h4>망설이지 않는 병원 한 번</h4>
         <p>
-          아파도 참고, 아파도 참던 날들.<br>
-          이제 약값 걱정 없이 병원에 갈 수 있다는<br>
+          아파도 참고, 아파도 참던 날들.<br class="br-pc">
+          이제 약값 걱정 없이<br class="br-mo"> 병원에 갈 수 있다는<br class="br-pc">
           그 안도감이 삶의 질을 바꿉니다.
         </p>
       </div>
@@ -908,8 +1175,8 @@
       <div class="story-card-body">
         <h4>잊히지 않았다는 위안</h4>
         <p>
-          전쟁터에 남편을 보내고 평생을 견뎌온 세월.<br>
-          국가가 그 헌신을 기억하고 있다는 사실 하나가<br>
+          전쟁터에 남편을 보내고 평생을 견뎌온 세월.<br class="br-pc">
+          국가가 그 헌신을 기억하고 있다는<br class="br-mo"> 사실 하나가<br class="br-pc">
           남은 인생에 따뜻한 위로가 됩니다.
         </p>
       </div>
@@ -922,7 +1189,7 @@
     <p>
       15만원은 숫자가 아닙니다.<br>
       국가가 보내는 감사의 마음이고,<br>
-      80세 어머니가 내일도 살아갈 이유입니다.
+      80세 어머니가<br class="br-mo"> 내일도 살아갈 이유입니다.
     </p>
     <div class="quote-author">- 대한민국이 기억하는 당신의 헌신</div>
   </div>
@@ -930,7 +1197,7 @@
 
 <!-- CTA 2 -->
 <div class="cta-banner">
-  참전유공자의 배우자이신가요? 주변에 해당되시는 분이 계신가요?<br>
+  참전유공자의 배우자이신가요?<br class="br-mo"> 주변에 해당되시는 분이 계신가요?<br>
   <strong>지금 바로 신청 방법을 확인하세요.</strong>
 </div>
 
@@ -944,9 +1211,9 @@
     <button class="cta-button">지금 바로 방문(우편) 신청하세요.</button>
   </div>
   <div class="cta-phone">
-    거동이 불편하시면 가족이 대리 신청할 수 있습니다<br><br>
+    거동이 불편하시면<br class="br-mo"> 가족이 대리 신청할 수 있습니다<br><br>
     국가보훈 상담센터 <strong>1577-0606</strong><br>
-    <span style="font-size:13px;">평일 09:00~18:00 | 주소지 관할 보훈(지)청 방문 또는 우편</span>
+    <span style="font-size:13px;">평일 09:00~18:00<br class="br-mo"> | 주소지 관할 보훈(지)청 방문 또는 우편</span>
   </div>
 </div>
 
